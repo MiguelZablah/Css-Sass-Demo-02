@@ -23,3 +23,26 @@ body{
     background-repeat: no-repeat;
     min-height: 100vh;
 }
+
+// Define scroll bar
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+
+    &-corner, 
+    &-track {
+        background: var(--color-grey-light-2);
+        background: var(--md-theme-default-scrollbar-background-on-background-variant,var(--color-grey-light-2));
+    }
+
+    &-thumb {
+        border-radius: 8px;
+        background: var(--color-primary-light);
+        background: var(--md-theme-default-scrollbar-on-background-variant,var(--color-primary-light));
+    }
+    
+    &-button {
+        display: none;
+    }
+}
