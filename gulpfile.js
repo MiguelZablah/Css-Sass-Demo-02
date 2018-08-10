@@ -12,10 +12,11 @@ var sassDir = 'app/css/';
 
 // Task Sass compiler
 gulp.task('sass', function() {
-	return gulp.src(sassSrc)
-		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-	    .pipe(stripCssComments())
-	    .pipe(cleanCSS({compatibility: 'ie9'}))
+	return gulp
+		.src(sassSrc)
+		.pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+		.pipe(stripCssComments())
+		.pipe(cleanCSS({ compatibility: 'ie9' }))
 		.pipe(gulp.dest(sassDir))
 		.pipe(browserSync.stream());
 });
@@ -23,7 +24,7 @@ gulp.task('sass', function() {
 // Start server with sass wacher and html watcher
 gulp.task('serve', function() {
 	browserSync.init({
-		server: "./app"
+		server: './app'
 	});
 
 	gulp.watch(sassSrc, gulp.parallel('sass'));
@@ -31,4 +32,4 @@ gulp.task('serve', function() {
 });
 
 // Compile my sass files to css
-gulp.task('default', gulp.series('sass', (done) => done()));
+gulp.task('default', gulp.series('sass', done => done()));
