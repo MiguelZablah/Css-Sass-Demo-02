@@ -3,11 +3,24 @@
 	list-style: none;
 	margin-top: 3.5rem;
 
+	@include media($bp-medium){
+		display: flex;
+		margin: 0;
+	}
+
 	&__item {
 		position: relative;
 
+		@include media($bp-medium){
+			flex: 1;
+		}
+
 		&:not(:last-child){
 			margin-bottom: .5rem;
+
+			@include media($bp-medium){
+				margin: 0;
+			}
 		}
 
 		&:active::before{
@@ -47,6 +60,16 @@
 			display: flex;
 			align-items: center;
 			z-index: 10;
+			
+			@include media($bp-medium){
+				justify-content: center;
+				padding: 2rem;
+			}
+
+			@include media($bp-small){
+				flex-direction: column;
+				padding: 1.5rem .5rem;
+			}
 		}
 	}
 
@@ -55,5 +78,12 @@
 		height: 1.75rem;
 		margin-right: 2rem;
 		fill: currentColor;
+
+		@include media($bp-small){
+			margin-right: 0;
+			margin-bottom: .7rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
 	}
 }

@@ -4,6 +4,12 @@
     align-items: center;
     justify-content: center;
 
+	@include media($bp-xsmall){
+		order: 1;
+		flex: 0 0 100%;
+		background-color: var(--color-grey-light-2);
+	}
+
     &__input {
         font-family: inherit;
         font-size: inherit;
@@ -16,10 +22,16 @@
         transition: all .2s;
         margin-right: -3.25rem;
 
+
         &:focus{
             outline: none;
             width: 100%;
             background-color: var(--color-grey-light-3);
+		
+			@include media($bp-xsmall){
+            background-color: var(--color-grey-light-2);
+				width: 90%;
+			}
         }
 
         &::-webkit-input-placeholder {

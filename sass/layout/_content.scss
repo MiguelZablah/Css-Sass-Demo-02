@@ -1,3 +1,6 @@
 .content{
     display: flex;
+	@include media($bp-medium){
+		flex-direction: column;
+	}
 }

@@ -9,6 +9,10 @@
 
 	}
 
+	&__friends {
+		display: flex;
+	}
+
 	&__photo {
 		box-sizing: content-box; // so porder dosen't affect img size
 		height: 4rem;

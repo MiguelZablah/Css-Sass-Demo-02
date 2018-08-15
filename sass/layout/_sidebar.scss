@@ -10,5 +10,9 @@
     font-size: 1.2rem;
     color: var(--color-grey-light-4);
     text-align: center;
-    padding: 2.5rem;;
+    padding: 2.5rem;
+
+	@include media($bp-medium){
+		display: none;
+	}
 }
